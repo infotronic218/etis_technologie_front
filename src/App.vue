@@ -1,31 +1,122 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="container-fluid content px-0">
+    <app-header></app-header>
+        <div class="main">
+              <transition name="page1" mode="out-in">
+                  <router-view />
+              </transition>
+        </div>
+        
+        <login></login>
+    
+    <div class="footer">
+      <app-footer></app-footer>
     </div>
-    <router-view/>
+    
   </div>
 </template>
 
+<script>
+import $ from 'jquery'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Login from  './components/admin/Login.vue'
+
+export default {
+  name: 'app',
+  components: {
+    'app-header': Header,
+    'app-footer':Footer,
+    'login':Login,
+  },methods:{
+    
+  }, 
+  mounted(){
+     $(document).click(function (event) {
+    var clickover = $(event.target);
+    var $navbar = $(".navbar-collapse");               
+    var _opened = $navbar.hasClass("show");
+    if (_opened === true && !clickover.hasClass("navbar-toggle")) {      
+        $navbar.collapse('hide');
+       } 
+    });
+  
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+
+body, html{
+  height: 100%;
 }
-#nav {
-  padding: 30px;
+.content{
+  min-height: 100%;
+  position: relative;
+}
+.main{
+  padding-bottom: 120px;
+
+}
+.footer{
+     bottom: 0;
+     position: absolute;
+     height: 120px;
+     width: 100%;
+}
+.mimg{
+  max-width: 100%;
+  height: auto;
+}
+.setting{
+  outline: 2px solid red;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+
+
+.mlink{
+    padding-left: 10px ! important;
+    padding-right: 10px ! important;
+    padding-top: 5px ! important;
+    padding-bottom: 5px ! important;
+    border-radius: 10px ! important;  
+    background-color: rgb(136, 175, 247)! important;
+}
+.mlink:hover{
+    background-color:  crimson ! important;
+    padding-left: 10px ! important;
+    padding-right: 10px ! important;
+    border-radius: 10px ! important;
+    width:100% ! important; 
+    color: white ! important;
+    text-decoration: none ! important;
+
+
+}
+.m-active{
+  background-color: crimson!important;
+  color: white ! important;
+}
+.mbg-dark{
+  background-color: #332040!important;
+}
+.ntec{
+     
+     border:3px solid;
+     border-radius: 10px;
+     border-color:orange;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.mshadow{
+      box-shadow: 8px 8px 7px #6c757d;
+}
+.page1-enter-active, .page1-leave-active {
+  transition: opacity 1s, transform 1s ! important;
+}
+.page1-enter, .page1-leave-to {
+  opacity: 0;
+  transform: translateX(-30%) !important;
 }
 </style>
