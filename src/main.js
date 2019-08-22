@@ -4,6 +4,7 @@ import vueMeta from 'vue-meta'
 import App from './App.vue'
 import router from './router'
 import Store from './store'
+import Init from './fb-sw'
 window.Store = Store
 window.router = router
 
@@ -26,7 +27,7 @@ Vue.use(LoadScript)
 
 
 Vue.config.productionTip = false
-
+Init()
 new Vue({
     router: router,
     store: Store,

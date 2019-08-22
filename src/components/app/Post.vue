@@ -30,11 +30,17 @@ export default {
     data(){
         return{
            slug:this.$route.params.slug,
-           post:null
+           post:Object
         }
     }, 
-    metaInfo:{
-      title:"Article detail"
+    metaInfo(){
+        return {
+            title:this.post.title,
+            meta:[
+                {name:'description', content:this.post.description}
+            ]
+        }
+     
     },
     methods:{
         fetch(okked){

@@ -1,6 +1,6 @@
 {
-    "name": "etis-pwa",
-    "short_name": "etis-pwa",
+    "name": "Etis Technologie",
+    "short_name": "ETIS Tech",
     "icons": [{
             "src": "./img/icons/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -14,8 +14,9 @@
     ],
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#4DBA87",
+    "orientation": "portrait",
+    "background_color": "#FFF",
+    "theme_color": "#503563",
     "scope": "/",
-    "gcm_sender_id": "102116174639"
+    "gcm_sender_id": "103953800507"
 }

@@ -58,13 +58,20 @@
 
     </div>
 </template>
-<<script>
+<script>
+import $ from 'jquery'
 export default {
-   metaInfo:{
-      title:"Nos services"
+   metaInfo(){
+      return{
+           title:"Nos services",
+           meta:[
+              {name:'description',content:'Etis technologies offre plusieurs services dans le milieu industriel !'}
+           ]
+      }
+    
    },
    mounted() {
-      $('#description').attr('content', "L'ensemble de nos services")
+     
    },
 }
 </script>

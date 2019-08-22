@@ -135,8 +135,9 @@
 
      </div>
 </template>
-<<script>
+<script>
 import   axios from 'axios'
+import bootbox from 'bootbox'
 export default {
   data() {
     return {
@@ -151,8 +152,14 @@ export default {
       success:false, 
     }
   },
-  metaInfo:{
-    title:'Nous contacter'
+  metaInfo(){
+    return{
+     title:'Nous contacter',
+     meta:[
+       {name:'description', content:'Vous pouvez contacter l\'équipe de Etis Technologies pour de plus amples informations'}
+     ]
+    }
+    
   },
   methods: {
      send:function(e){

@@ -17,15 +17,15 @@
 						  <div class="carousel-inner">
 						    
 						    <div class="carousel-item">
-						      <img class="d-block w-100" style="width: 100%; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/webmarket-ca833.appspot.com/o/novatech_images%2F1549036809289etis%20technologies.png?alt=media&amp;token=4cd88c60-1492-4ab0-97f2-1a9e4aaac065" alt="Second slide">
+						      <img class="d-block w-100" style="width: 100%; height: auto;" src="@/assets/carousel/etis_technologies.png" alt="First slide">
 						    </div>
 						    
 						    <div class="carousel-item active carousel-item-left">
-						      <img class="d-block w-100" style="width: 100%; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/webmarket-ca833.appspot.com/o/novatech_images%2F1549036573626notre%20mission.png?alt=media&amp;token=0ee3fe6e-3155-4bc7-b1f6-533284121f6f" alt="Second slide">
+						      <img class="d-block w-100" style="width: 100%; height: auto;" src="@/assets/carousel/notre_equipe.png" alt="Second slide">
 						    </div>
 						    
 						    <div class="carousel-item carousel-item-next carousel-item-left">
-						      <img class="d-block w-100" style="width: 100%; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/webmarket-ca833.appspot.com/o/novatech_images%2F1549035405775equipe.png?alt=media&amp;token=e7493a12-c1ce-441c-b248-f5178416005b" alt="Second slide">
+						      <img class="d-block w-100" style="width: 100%; height: auto;" src="@/assets/carousel/notre_mission.png" alt="Second slide">
 						    </div>
 						    
 						  </div>
@@ -50,7 +50,7 @@
          <div class="card mshadow bg-dark py-3  px-2 ">
                 <div class="row justify-content-center">
                          <div class="col-sm-6">
-                          <img src="images/etis.png" class="mimg">
+                          <img alt="etis images error" src="@/assets/imgs/etis.png" class="mimg">
                          </div>
                         <div class="col-sm-6 p-2">
                            <div class="container">
@@ -73,7 +73,7 @@
         <div class="card mshadow py-3 px-2 bg-dark">
             <div class="row justify-content-center">
                 <div class=" col-sm-6 text-center my-3 px-2">
-                       <img src="images/services.png" class="col-img">
+                       <img alt="services image error"  src="@/assets/imgs/services.png" class="col-img">
                        
                 </div>
                 <div class="col-sm-6">
@@ -95,7 +95,7 @@
         <div class="card py-3 mshadow  px-2 bg-dark">
             <div class="row justify-content-center my-3">
                 <div class="col-sm-6 text-center">
-                          <img alt="" style="max-width: 100%; height: auto;" src="images/training.png">
+                          <img alt="formations" style="max-width: 100%; height: auto;"  src="@/assets/imgs/training.png">
                 </div>
                 <div class="col-sm-6">
                        
@@ -115,6 +115,7 @@
     </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
     
     mounted(){
@@ -122,9 +123,14 @@ export default {
          interval: 3000
       })
     },
-    metaInfo:{
-           title: 'ETIS TECHNOLOGIES',
+    metaInfo(){
+      return{
+           title: 'ETIS Technologies',
+           meta:[
+             {name:'description', content:'Etis Technologies est entreprise offrant des services dans le domaine électrique, électronique et informatique.'}
+           ]
            
+      }
     },
 }
 </script>

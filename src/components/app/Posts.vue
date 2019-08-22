@@ -88,8 +88,14 @@ export default {
             categoryId:this.$route.params.categoryId,
             
         }
-    },metaInfo:{
-       title:'Liste de nos articles'
+    },metaInfo(){
+        return{
+          title:'Liste de nos articles',
+          meta:[
+              {name:'description', content:'Vous trouverez ici la liste de nos articles'}
+          ]
+        }
+       
     },
     methods:{
       async  fetch(page){
