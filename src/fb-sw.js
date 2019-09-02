@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'firebase/messaging'
 const configs = JSON.parse(process.env.VUE_APP_FIRBASE_CONFIGS)
 
 

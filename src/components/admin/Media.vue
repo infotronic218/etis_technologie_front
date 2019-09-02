@@ -1,27 +1,22 @@
 <template>
     <div>
-        <h1 class="text-center">My media file</h1>
+       <loader  :loading="loader" />
+        <h4 class="text-center text-uppercase"> Image file manager </h4>
        
         <div class="col-sm-12">
-            <h6>
-                <a href="#" name="root" class="btn-fo">Root</a>
-                <a href="#">/images</a>
-                <a href="#">/test</a>
-            </h6>
+             <div class="card-header ">
             <div class="row">
-                <div class="col-sm-8">
-                
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb" >
-                        <li class="breadcrumb-item"><a href="#" class="btn-fo" name="root">root</a></li>
-                    </ol>
-                </nav>
-                </div>
-                <div class="col-sm-4">
-                 <button class="mx-1 btn " title="Create Folder" @disabled="currentPath!=root"   @click.prevent="createForder()"> <i class="fas fa-folder-plus"></i></button>
-                 <button class="mx-1 btn "  @click.prevent="modalFileUpload()" title="Upload File">  <i class="fas fa-file-upload    "></i> </button>
+                <div class="col-sm-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" >
+                            <li class="breadcrumb-item"><a href="#" class="btn-fo" name="root">root</a></li>
+                        </ol>
+                        <button class="mx-1 btn " title="Create Folder" @disabled="currentPath!=root"   @click.prevent="createForder()"> <i class="fas fa-folder-plus text-warning btn1"></i></button>
+                        <button class="mx-1 btn btn1"  @click.prevent="modalFileUpload()" title="Upload File">  <i class="fas fa-file-upload  text-success  btn1"></i> </button>
+                    </nav>
                 </div>
             </div>
+             </div>
         </div>
         <div class="col-sm-12 mb-3">
                <div class="table-responsive">
@@ -137,8 +132,11 @@
 </template>
 <script>
 import db from '../../database'
-import { database } from 'firebase';
+import Loader from '../Loader.vue'
 export default {
+    components:{
+          'loader':Loader,
+    },
     data() {
         return {
             db: db.db,
@@ -150,6 +148,7 @@ export default {
             fileDescription:'',
             file:null,
             errorFile:false,
+            loader:false,
            
 
         }
@@ -178,7 +177,7 @@ export default {
                      data.forEach(snap=>{
                         var html = '<tr><td> <a  class="" > <i class="fa fa-file" aria-hidden="true"></i> '+ snap.id +'</a></td>'
                         html+=     '<td> 15/12/2018</td>'
-                        html+=     '<td><div class="img-container"><img alt="img" class="img-fix" src="'+snap.data().url+'"></div></td>'
+                        html+=     '<td><div class="img-container1"><img alt="img" class="img-fix" src="'+snap.data().url+'"></div></td>'
                          html+=     '<td><span title="Copy the image url" id="'+snap.data().url +'" class="fas fa-copy icon1 btn-copy  text-warning  mx-1"></span><i class="fa fa-trash mx-1 icon1 text-danger" aria-hidden="true"></i></td></tr>'
                         //console.log(snap)
                         $('#tbody').append(html)
@@ -228,10 +227,11 @@ export default {
          if(this.file){
            var uploadTask= this.fs.ref(path).put(this.file);
            $('#fileUpload').modal('hide')
+           this.loader = true;
            uploadTask.on('state_changed', (snapshot)=>{
-
+                
            },(error)=>{
-
+             this.loader = false;
            },()=>{
                uploadTask.snapshot.ref.getDownloadURL().then(downloadUrl=>{
                   //console.log(downloadUrl)
@@ -241,6 +241,9 @@ export default {
                       'path':path
                   }).then(snap=>{
                       bootbox.alert("File saved successfully !")
+                      this.loader = false;
+                  }).catch(error=>{
+                      this.loader = false;
                   })
                })
            })
@@ -273,7 +276,7 @@ export default {
          } finally {
             document.body.removeChild(textarea);
         }
-             bootbox.alert("Url copied succesffully !")
+    
           
         })
         this.loadFolder(this.root)
@@ -286,11 +289,15 @@ export default {
      max-height: 100%;
      max-width: 100%;
  }
- .img-container{
+ .img-container1{
      height: 120px;
      width: 120px;
  }
  .icon1{
+     font-size: 24px;
+ }
+
+ .btn1{
      font-size: 24px;
  }
 </style>

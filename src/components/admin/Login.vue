@@ -63,6 +63,8 @@ export default {
                  })
                  this.email =""
                  this.password=""
+                 this.message= ""
+                 this.error = false
                  $('#loginForm').modal('hide')
                  bootbox.alert('<p class="text-success"><strong>You have succesfully Login !</strong></p>')
              }).catch(error=>{

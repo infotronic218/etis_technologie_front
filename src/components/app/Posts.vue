@@ -42,8 +42,8 @@
                         </div>
                 </div>
 
-                <div v-if="posts.length==0 && loaded" class="card-body bg-white">
-                    <div class="row justify-content-center justify-items-center h-100">
+                <div v-if="posts.length==0 && loaded  " class="card-body bg-white">
+                    <div v-if="!$route.params.categoryId" class="row justify-content-center justify-items-center h-100">
                         <div class="col-sm-12">
                             <div class="jumbotron">
                                 <h4 class="display-4 text-center"><strong>Articles list is empty !</strong></h4>
@@ -52,20 +52,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div v-if="!loaded && posts.length==0" class="card-body bg-white">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-6 p-2" style="min-height:200px;">
-                             <div class="wrap">
-                                <div class="loading">
-                                <div class="bounceball"></div>
-                                <div class="text">LOADING ARTICLE</div>
-                                </div>
+                    <div v-if="$route.params.categoryId" class="row justify-content-center">
+                        <div class="col-sm-12 " style="min-height:200px;">
+                            <div class="jumbotron">
+                                <h4 class="display-5 text-center text-primary"><strong>This category of article  is empty !</strong></h4>
+                                <p class="lead text-center"><strong>Visit others category of article ! .</strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
+
         </div>
             
         </div>
@@ -98,7 +95,7 @@ export default {
        
     },
     methods:{
-      async  fetch(page){
+      async  fetch(){
            var urlRoot ="/api/posts?page=";
            if(this.categoryId!=null){
                urlRoot = "api/posts/category/"+this.categoryId+"?page=";
@@ -120,6 +117,9 @@ export default {
                 this.loaded = true 
                
             })
+        },
+        paginate(){
+
         },
         getURLRoot(){
             return window.location.pathname
@@ -183,3 +183,9 @@ beforeRouteLeave (to, from, next) {
     
 }
 </script>
+<style >
+    .disabled{
+    pointer-events:none;
+    opacity:0.7;
+}
+</style>

@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="container-fluid content px-0">
+    <loader :loading="loading"></loader>
     <app-header></app-header>
         <div class="main">
               <transition name="page1" mode="out-in">
@@ -21,14 +22,22 @@ import $ from 'jquery'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Login from  './components/admin/Login.vue'
-
+import Loader from  './components/Loader.vue'
+import Axios from 'axios'
 export default {
   name: 'app',
   components: {
     'app-header': Header,
     'app-footer':Footer,
     'login':Login,
-  },methods:{
+    'loader':Loader,
+  },data() {
+    return {
+      loading:false,
+      
+    }
+  }
+  ,methods:{
     
   }, 
   mounted(){
@@ -40,6 +49,22 @@ export default {
         $navbar.collapse('hide');
        } 
     });
+
+    Axios.interceptors.request.use(configs=>{
+       this.loading = true;
+      return configs
+    }, error=>{
+       this.loading = false;
+       return Promise.reject(error)
+    })
+
+    Axios.interceptors.response.use(response=>{
+        this.loading = false;
+      return response
+    }, error=>{
+      this.loading = false;
+      return Promise.reject(error)
+    })
   
   }
 }
@@ -118,5 +143,8 @@ body, html{
 .page1-enter, .page1-leave-to {
   opacity: 0;
   transform: translateX(-30%) !important;
+}
+.bg-dark{
+  background-color: #332040 !important;
 }
 </style>

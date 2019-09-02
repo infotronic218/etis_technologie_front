@@ -47,24 +47,21 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav align-items-center">
                        
-                        <router-link class="m-2 mlink h5 btn w-100 text-uppercase" exact-active-class="m-active" to="/"><span class="fas fa-home text-white"></span> <strong>Acceuil</strong></router-link>
-                        <router-link class="m-2 mlink h5 w-100 btn text-uppercase" exact-active-class="m-active" to="/services"><span class="fas fa-briefcase text-white"></span><strong> Services</strong></router-link>
-                        <router-link hidden="" class="m-2 mlink h5 btn w-100 text-uppercase" exact-active-class="m-active" to="/formations"><span class="fas fa-graduation-cap text-white"></span><strong>  Formations</strong></router-link>
-                        <router-link class="m-2 mlink btn h5 w-100 text-uppercase" active-class="m-active" to="/blog"><span class="fas fa-project-diagram text-white"></span><strong> Blog</strong></router-link>
-                        <router-link class="m-2 mlink btn h5 w-100 text-uppercase" exact-active-class="m-active" to="/contact"> <span class="fas fa-envelope text-white"></span><strong>  Contact</strong></router-link>
-                        <router-link  v-if="this.$store.state.userIsAuthorized" class="m-2 mlink btn h5 w-100 text-uppercase" to="/settings"> <span class="fas fa-cogs text-white"></span><strong>  Settings</strong></router-link>
-                        <a v-if="!this.$store.state.userIsAuthorized" exact-active-class="active" class="m-2 mlink btn h5 w-100 text-uppercase" @click.prevent="loginForm()"> <i class="fas fa-sign-in-alt text-white"></i><strong>  Login</strong></a>
-                        <a v-if="this.$store.state.userIsAuthorized" exact-active-class="active" class="m-2 mlink btn h5 w-100 text-uppercase"  @click.prevent="logout()"> <span class="fas  fa-sign-out-alt text-white"></span><strong >  Logout</strong></a>
-                        <router-link v-if="this.$store.state.userIsAuthorized" exact-active-class="m-active" to="/account" class="m-2 mlink btn h5 w-100 text-uppercase" > <span class="fas  fa-sign-out-alt text-white"></span><strong > Mon compte</strong> </router-link>
+                        <router-link class="m-2 mlink d-flex btn w-100 text-uppercase" exact-active-class="m-active" to="/"><span class="fas fa-home text-white mx-1"></span> <strong>Acceuil</strong></router-link>
+                        <router-link class="m-2 mlink d-flex h5 w-100 btn text-uppercase" exact-active-class="m-active" to="/services"><span class="fas fa-briefcase text-white mx-1"></span><strong> Services</strong></router-link>
+                        <router-link  hidden="hidden" class="m-2  mlink h5 btn w-100 text-uppercase " exact-active-class="m-active" to="/formations"><span class="fas fa-graduation-cap text-white mx-1"></span><strong>  Formations</strong></router-link>
+                        <router-link class="m-2 mlink btn d-flex h5 w-100 text-uppercase" active-class="m-active" to="/blog"><span class="fas fa-project-diagram text-white mx-1"></span><strong> Blog</strong></router-link>
+                        <router-link class="m-2 mlink btn d-flex h5 w-100 text-uppercase" exact-active-class="m-active" to="/contact"> <span class="fas fa-envelope text-white mx-1"></span><strong>  Contact</strong></router-link>
+                        <router-link  v-if="this.$store.state.userIsAuthorized" class="m-2 mlink d-flex btn h5 w-100 text-uppercase" to="/settings"> <span class="fas fa-cogs text-white mx-1"></span><strong>  Settings</strong></router-link>
+                        <a v-if="!this.$store.state.userIsAuthorized" exact-active-class="active" class="m-2 d-flex mlink btn h5 w-100 text-uppercase" @click.prevent="loginForm()"> <i class="fas fa-sign-in-alt text-white mx-1"></i><strong>  Login</strong></a>
+                        <a v-if="this.$store.state.userIsAuthorized" exact-active-class="active" class="m-2 d-flex mlink btn h5 w-100 text-uppercase"  @click.prevent="logout()"> <span class="fas  fa-sign-out-alt text-white mx-1"></span><strong >  Logout</strong></a>
+                        <router-link v-if="this.$store.state.userIsAuthorized" exact-active-class="active" to="/account" class="m-2 d-flex mlink btn h5 w-100 text-uppercase" > <span class="fas  fa-sign-out-alt text-white mx-1"></span><strong > Mon compte</strong> </router-link>
                       </div>
                     </div>
                   </nav>
                </div>
 </template>
-<script type="text/javascript">
 
-    export default {};
-</script>
 
 <style>
 

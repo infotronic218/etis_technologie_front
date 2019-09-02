@@ -2,12 +2,12 @@
     "name": "Etis Technologie",
     "short_name": "ETIS Tech",
     "icons": [{
-            "src": "./img/icons/android-chrome-192x192.png",
+            "src": "./img/incon.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "./img/icons/android-chrome-512x512.png",
+            "src": "./img/incon.png",
             "sizes": "512x512",
             "type": "image/png"
         }

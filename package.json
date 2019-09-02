@@ -22,7 +22,6 @@
         "jquery": "^3.4.0",
         "popper.js": "^1.15.0",
         "vue-meta": "^1.6.0"
-
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.10.0",
@@ -34,6 +33,5 @@
         "eslint-plugin-vue": "^5.0.0",
         "vue-template-compiler": "^2.6.10",
         "vue-plugin-load-script": "^1.2.0"
-
     }
 }

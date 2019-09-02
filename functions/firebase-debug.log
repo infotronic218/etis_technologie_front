@@ -1,0 +1,78 @@
+[debug] [2019-08-30T18:57:28.182Z] ----------------------------------------------------------------------
+[debug] [2019-08-30T18:57:28.187Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sous\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-30T18:57:28.187Z] CLI Version:   6.5.0
+[debug] [2019-08-30T18:57:28.187Z] Platform:      win32
+[debug] [2019-08-30T18:57:28.187Z] Node Version:  v10.15.1
+[debug] [2019-08-30T18:57:28.190Z] Time:          Fri Aug 30 2019 19:57:28 GMT+0100 (GMT+01:00)
+[debug] [2019-08-30T18:57:28.190Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-30T18:57:28.212Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-30T18:57:28.215Z] > authorizing via signed-in user
+[debug] [2019-08-30T18:57:28.215Z] [iam] checking project etis-tech for permissions ["firebase.projects.get"]
+[debug] [2019-08-30T18:57:28.220Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech:testIamPermissions  
+
+[debug] [2019-08-30T18:57:30.797Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-30T18:57:30.800Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech  
+ 
+[debug] [2019-08-30T18:57:35.135Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Mes Projets\NODEJS_2019\VueJS\ETIS\etis-pwa'...
+[info] 
+[warn] !  functions: Cannot start emulator. SyntaxError: Invalid or unexpected token
+[debug] [2019-08-30T18:57:36.066Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236098333646/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-30T18:57:37.248Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-30T18:58:28.855Z] ----------------------------------------------------------------------
+[debug] [2019-08-30T18:58:28.861Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sous\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-30T18:58:28.861Z] CLI Version:   6.5.0
+[debug] [2019-08-30T18:58:28.861Z] Platform:      win32
+[debug] [2019-08-30T18:58:28.861Z] Node Version:  v10.15.1
+[debug] [2019-08-30T18:58:28.863Z] Time:          Fri Aug 30 2019 19:58:28 GMT+0100 (GMT+01:00)
+[debug] [2019-08-30T18:58:28.863Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-30T18:58:28.883Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-30T18:58:28.885Z] > authorizing via signed-in user
+[debug] [2019-08-30T18:58:28.885Z] [iam] checking project etis-tech for permissions ["firebase.projects.get"]
+[debug] [2019-08-30T18:58:28.889Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech:testIamPermissions  
+
+[debug] [2019-08-30T18:58:32.356Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-30T18:58:32.362Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech  
+ 
+[debug] [2019-08-30T18:58:34.267Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Mes Projets\NODEJS_2019\VueJS\ETIS\etis-pwa'...
+[info] 
+[warn] !  functions: Cannot start emulator. SyntaxError: Invalid or unexpected token
+[debug] [2019-08-30T18:58:35.147Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236098333646/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-30T18:58:35.993Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-30T19:08:24.688Z] ----------------------------------------------------------------------
+[debug] [2019-08-30T19:08:24.692Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sous\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-30T19:08:24.692Z] CLI Version:   6.5.0
+[debug] [2019-08-30T19:08:24.692Z] Platform:      win32
+[debug] [2019-08-30T19:08:24.692Z] Node Version:  v10.15.1
+[debug] [2019-08-30T19:08:24.694Z] Time:          Fri Aug 30 2019 20:08:24 GMT+0100 (GMT+01:00)
+[debug] [2019-08-30T19:08:24.694Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-30T19:08:24.710Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-30T19:08:24.712Z] > authorizing via signed-in user
+[debug] [2019-08-30T19:08:24.712Z] [iam] checking project etis-tech for permissions ["firebase.projects.get"]
+[debug] [2019-08-30T19:08:24.715Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech:testIamPermissions  
+
+[debug] [2019-08-30T19:08:26.085Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-30T19:08:26.091Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/etis-tech  
+ 
+[debug] [2019-08-30T19:08:27.268Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Mes Projets\NODEJS_2019\VueJS\ETIS\etis-pwa'...
+[info] 
+[warn] !  functions: Cannot start emulator. SyntaxError: Invalid or unexpected token
+[debug] [2019-08-30T19:08:28.213Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236098333646/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-30T19:08:29.004Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] +  hosting: Local server: http://localhost:5000

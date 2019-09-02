@@ -43,11 +43,11 @@ export default {
      
     },
     methods:{
-        fetch(okked){
+        fetch(callBack){
             console.log(this.slug)
             axios.get("/api/posts/"+this.slug).then(data=>{
             this.post = data.data
-            okked()
+            callBack()
             }).catch(error=>{
                 console.log(error)
             })
@@ -55,20 +55,20 @@ export default {
     },
     mounted(){
        var postString = window.localStorage.getItem('post')
+       console.log(postString, this.post)
        if(postString){
            this.post = JSON.parse(postString)
            window.localStorage.removeItem('post')
            document.title = this.post.title
-        }
-        if(!this.post){
-            let $this = this
+        }else if(!this.post.title){
+          let $this = this 
           this.fetch(function(){
-              document.title=$this.post.title
              Vue.loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js').then(()=>{
               document.querySelectorAll('pre code').forEach((block) => {
                hljs.highlightBlock(block);
               });
              })
+             console.log($this.post)
           })
         }
        Vue.loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js').then(()=>{
